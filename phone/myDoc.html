@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="index/css/main.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div id="page_0" class="up ub ub-ver" tabindex="0">
+            <!--header开始-->
+            <div id="header">
+                <div id="header_1" class="uh bc-text-head ub bc-head">
+                    <div class="umw3 ub ub-ac ub-pc" ontouchstart="appcan.touch()" onclick=""></div>
+                    <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">文档传奇</h1>
+                    <div class="umw3 ub ub-ac ub-pc" ontouchstart="appcan.touch()" onclick="appcan.openWinWithUrl('edit','edit.html');">
+                        <div class="ub-img icon-edit umw2 umh4"></div>
+                    </div>
+                </div>
+                <div id="header_2" class=" uhide">
+                    <div class="ub-fv ubb2 ub-fh">
+                        <div class="ub uinn-a7 ub-ac ub-fv" id="tabview1">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--header结束-->
+            <!--content开始-->
+            <div id="content" class="ub-f1 bc-bg">
+
+            </div>
+            <!--footer开始-->
+            <!--div id="footer" class="uf t-bla ub tab t-wh ubt b-gra2">
+            <div class="pos_re ub ub-f1">
+            <input class="uhide" type="radio" name="tabSwitch" checked="true">
+            <div onmousedown="appcan.touch('',appcan.elementFor);" ontouchstart="appcan.touch('',appcan.elementFor);" onclick="changeCon(0);" class="ub-f1 ub ub-ver tab-act">
+            <div class="ub-f1 ub-img5 tp-bookStore"></div>
+            <div class="uinn-a13 ulev-1 tx-c act-col">书架</div>
+            </div>
+            </div>
+            <div class="pos_re ub ub-f1">
+            <input class="uhide" type="radio" name="tabSwitch">
+            <div onmousedown="appcan.touch('',appcan.elementFor);" ontouchstart="appcan.touch('',appcan.elementFor);" onclick="changeCon(1);" class="ub-f1 ub ub-ver tab-act">
+            <div class="ub-f1 ub-img5 tp-bookShelf"></div>
+            <div class="uinn-a13 ulev-1 tx-c act-col">书城</div>
+            </div>
+            </div>
+            <div class="pos_re ub ub-f1">
+            <input class="uhide" type="radio" name="tabSwitch">
+            <div onmousedown="appcan.touch('',appcan.elementFor);" ontouchstart="appcan.touch('',appcan.elementFor);" onclick="" class="ub-f1 ub ub-ver tab-act">
+            <div class="ub-f1 ub-img5 tp-my"></div>
+            <div class="uinn-a13 ulev-1 tx-c act-col">个人中心</div>
+            </div>
+            </div>
+            </div-->
+            <div id="footer" class="uf sc-bg ubt sc-border-tab">
+
+            </div>
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+        <script src="js/appcan.tab.js"></script>
+    </body>
+    <script>
+        var titHeight = 0;
+        var conArray = [true, false, false];
+        var conArray1 = [false, false, false, false];
+        appcan.ready(function() {
+            titHeight = $('#header').offset().height;
+            appcan.openPopoverByEle("content", "myDoc_content.html", 0, titHeight, 0);
+        });
+        var tabview = appcan.tab({
+            selector : "#footer",
+            hasIcon : true,
+            hasAnim : false,
+            hasLabel : true,
+            hasBadge : false,
+            data : [{
+                label : "书架",
+                icon : "fa-book"
+            }, {
+                label : "书城",
+                icon : "fa-building"
+            }, {
+                label : "个人中心",
+                icon : "fa-user-md"
+            }]
+        });
+        tabview.on("click", function(obj, index) {
+            if (index == 2) {
+                return;
+            }
+            changeCon(index);
+        })
+        function changeCon(idx) {
+            var name = '';
+            if (idx == 0) {
+                $("#header_1")[0].className = "uh bc-text-head ub bc-head";
+                $("#header_2")[0].className = "uhide";
+                name = 'index_content'
+                //zy_con("content", "index_content.html", 0, titHeight);
+            } else if (idx == 1) {
+                $("#header_2")[0].className = "uh ub uh-app4 c-wh2";
+                $("#header_1")[0].className = "uhide";
+                name = 'recommend'
+                //zy_con("content", "recommend.html", 0, titHeight);
+            }
+            if(idx === 0){
+                appcan.bringPopoverToFront('content');
+                return;
+            }
+            if (!conArray[idx]) {
+                appcan.openPopoverByEle("content", name + ".html", 0, titHeight, 0, 'content_' + idx);
+                conArray[idx] = true;
+            } else {
+                appcan.bringPopoverToFront('content_' + idx);
+            }
+        }
+
+        var tabview1 = appcan.tab({
+            selector : "#tabview1",
+            hasIcon : false,
+            hasAnim : true,
+            hasLabel : true,
+            hasBadge : false,
+            index : 0,
+            data : [{
+                label : "推荐",
+            }, {
+                label : "排行",
+            }, {
+                label : "分类",
+            }, {
+                label : "搜索",
+            }]
+        });
+        tabview1.on("click", function(obj, index) {
+            if (index == 3) {
+                return;
+            }
+            changeIdx(index);
+        })
+        function changeIdx(idx) {
+            var name = '';
+            switch(idx) {
+            case 0 :
+                name = 'recommend';
+                break;
+            case 1 :
+                name = 'ranking';
+                break;
+            case 2 :
+                name = 'b-solo';
+                break;
+            case 3 :
+                //name = 'recommend';
+                break;
+            }
+            if(name === 'recommend'){
+                appcan.bringPopoverToFront('content_' + 1);
+                return;
+            }
+            if (!conArray1[idx]) {
+                appcan.openPopoverByEle("content", name + ".html", 0, titHeight, 0, 'content1_' + idx);
+                conArray1[idx] = true;
+            } else {
+                appcan.bringPopoverToFront('content1_' + idx);
+            }
+        }
+
+    </script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="myDoc_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver uinn-b1" id="index-bookList">
+
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.window.setBounceType('0', '#EEEEEE', 0);
+            appcan.window.setBounceType('1', '#EEEEEE', 0);
+            bookList();
+        })
+        function bookList() {
+            var arrBook = [{
+                "bookImg" : "myDoc_content/css/myImg/book1.png",
+                "bookName" : "NPO管理员手册"
+            }, {
+                "bookImg" : "myDoc_content/css/myImg/book2.png",
+                "bookName" : "NPO安装指南"
+            }, {
+                "bookImg" : "myDoc_content/css/myImg/book3.png",
+                "bookName" : "PCMD用户指南"
+            }, {
+                "bookImg" : "myDoc_content/css/myImg/book4.png",
+                "bookName" : "NUART用户指南"
+            }, {
+                "bookImg" : "myDoc_content/css/myImg/book5.png",
+                "bookName" : "NPO功能说明"
+            }, {
+                "bookImg" : "myDoc_content/css/myImg/book6.png",
+                "bookName" : "NPO硬件配置手册"
+            }, {
+                "bookImg" : "myDoc_content/css/myImg/book7.png",
+                "bookName" : "NPO KPI与计数器"
+            }, {
+                "bookImg" : "myDoc_content/css/myImg/book8.png",
+                "bookName" : "DocLegends使用说明"
+            }];
+            var tmpl = '<%for(var i=0,len=arrBook.length;i<len;i++){%>' + '<%if(i%3 == 0){%>' + '<div class="ub ub-at-list ub-f1 umar-at1">' + '<%}%>' + '<div onmousedown="appcan.touch()" ontouchstart="appcan.touch()" onclick="read(event);" class="ub ub-ver uw-rli">' + '	<div  style="background-image:url(${arrBook[i].bookImg});" class="ub-img umh-list8 umw-list6  umar-ar6">' + '	</div>' + '	<div class="t-gra-4b tx-c ulev-4 uof uinn-r1 umar-ar6">${arrBook[i].bookName}</div>' + '</div>' + '<%if(i%3 == 2){%>' + '</div>' + '<%}%>' + '<%}%>' + '<div class="ub ub-ver uw-rli">' + '	<div onmousedown="appcan.touch(\'\')" ontouchstart="appcan.touch(\'\')" style="background-image:url(myDoc_content/css/myImg/bookAdd.png);" class="ub-img umh-list8 umw-list6 umar-ar6"></div>' + '</div>'
+            appcan.tmpl('#index-bookList', tmpl, {
+                'arrBook' : arrBook
+            });
+        }
+
+        function read(e) {
+            if (appcan.detect.os.phone && e.type == 'click') {
+                return;
+            }
+            appcan.openWinWithUrl('catalog', 'catalog.html');
+        }
+    </script>
+</html>

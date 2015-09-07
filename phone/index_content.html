@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="index_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver ub-fv">
+         <div id="slider" class="slider" style="height: 150px;">
+</div>
+
+            <div class="ub-f1 ub ub-ver">
+                <div class="ub-f1 ub">
+                    <div class="uw-app1 ub">
+                        <div class="ub-f1 c-gre-me2 ub" id='customer'>
+                            <div class="ub ub-ver uinn-me2-1 ub-f1">
+                           
+                                <div class="ufm1 bc-text-head tx-c ub-f1 ub-ac ub-pc ub">
+                                    <div class="ub-f1 ub-ac ub-pc ub">
+                                        客户档案
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uw-app1 ub">
+                        <div class="ub-f1 c-bla-me2 ub" id='news'>
+                            <div class="ub ub-ver uinn-me2-1 ub-f1">
+                              
+                                <div class=" bc-text-head ub ub-ver ub-ac ub-pc ub-f1">
+                                  <div class="ub-f1 ub-ac ub-pc ub">
+                                        最新消息
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-------1------>
+              <div class="ub-f1 ub">
+                    <div class="uw-app1 ub">
+                        <div class="ub-f1 me2Bg ub" id='question'>
+                            <div class="ub ub-ver ub-f1">
+                                <div class="uinn-me2-1 ub-f1 c-blu2-me2 ub ub-ver">
+                                    <div class="ub-f1 ub-ac ub-pc ub">
+                                           问题追踪    
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uw-app1 ub">
+                        <div class="ub-f1 me2Bg1 ub-img1 ub" id='attention'>
+                            <div class="ub ub-ver uinn-me2-1 ub-f1">
+                               
+                                <div class=" bc-text-head ub ub-ver ub-ac ub-pc ub-f1">
+                                    <div class="ub-f1 ub-ac ub-pc ub">
+                                        我的关注
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!------2------>
+                <div class="ub-f1 ub">
+                    <div class="uw-app1 ub">
+                        <div class="ub-f1 me2Bg-o ub" id='network'>
+                            <div class="ub ub-ver ub-f1">
+                                <div class="uinn-me2-1 ub-f1 c-blu2-me2 ub ub-ver">
+                                  
+                                    <div class="ub-f1 ub-ac ub-pc ub">
+                                       当前网络
+                                     
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uw-app1 ub">
+                        <div class="ub-f1 my-me2Bg1 ub-img1 ub" id='vip'>
+                            <div class="ub ub-ver uinn-me2-1 ub-f1">
+                               
+                                <div class=" bc-text-head ub ub-ver ub-ac ub-pc ub-f1">
+                                    <div class="ub-f1 ub-ac ub-pc ub">
+                                        个人中心
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+   <script src="js/appcan.slider.js"></script>
+ </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        })
+   var slider = appcan.slider({
+  selector : '#slider',
+  aspectRatio:8/16,
+  hasLabel:false,
+  index:0
+});
+slider.set([{
+    img : "css/res/zf1.jpg",
+    label:""
+}, {
+    img : "css/res/zf2.jpg",
+    label:""
+}, {
+    img : "css/res/zf3.jpg",
+    label:""
+}])
+slider.on("clickItem",function(index,data){
+})
+appcan.button("#customer", "ani-act", function() {
+      appcan.window.open({
+          name:'customer',
+          data:'myDoc.html'
+      });      
+})
+appcan.button("#news", "ani-act", function() {
+      appcan.window.open({
+          name:'news',
+          data:'news.html'
+      });      
+})
+
+appcan.button("#question", "ani-act", function() {
+      appcan.window.open({
+          name:'question',
+          data:'question.html'
+      });      
+})
+appcan.button("#attention", "ani-act", function() {
+      appcan.window.open({
+          name:'attention',
+          data:'attention.html'
+      });      
+})
+appcan.button("#vip", "ani-act", function() {
+      appcan.window.open({
+          name:'vip',
+          data:'vip.html'
+      });      
+})
+appcan.button("#network",'ani-act',function(){
+      appcan.window.open({
+          name:'network',
+          data:'network.html'
+      })  
+})
+ </script>
+</html>

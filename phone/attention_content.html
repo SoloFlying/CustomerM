@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="attention_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+    
+
+        <div class="ub ub-ver ub-fv">
+            <!--content-->
+                <div id="img" class="ub ub-img my-img" >
+</div>
+            <div class="ub ub-ver uinn-squ1">
+           
+                <div class="ub umar-at1">
+                    <div class="ub-f1 ub ub-ver ub-ac">
+                        <div class="uc-a-squ1 uwh-squ1 c-gra1-squ ub ub-ac ub-pc">
+                            <div class="uc-a-squ1 uwh-squ1 ub-img squIcon3"></div>
+                        </div>
+                        <div class="umar-at1 t-gra7 tx-c ulev-squ">
+                            文档
+                        </div>
+                    </div>
+                    <div class="ub-f1 ub ub-ver ub-ac">
+                        <div class="uc-a-squ1 uwh-squ1 c-blu1-squ ub ub-ac ub-pc">
+                            <div class="uc-a-squ1 uwh-squ1 ub-img squIcon4"></div>
+                        </div>
+                        <div class="umar-at1 t-gra7 tx-c ulev-squ">
+                            消息
+                        </div>
+                    </div>
+                </div>
+                <div class="ub umar-at1">
+                    <div class="ub-f1 ub ub-ver ub-ac">
+                        <div class="uc-a-squ1 uwh-squ1 c-org1-squ ub ub-ac ub-pc">
+                            <div class="uc-a-squ1 uwh-squ1 ub-img squIcon5"></div>
+                        </div>
+                        <div class="umar-at1 t-gra7 tx-c ulev-squ">
+                            问题
+                        </div>
+                    </div>
+                    <div class="ub-f1 ub ub-ver ub-ac">
+                        <div class="uc-a-squ1 uwh-squ1 c-org2-squ ub ub-ac ub-pc">
+                            <div class="uc-a-squ1 uwh-squ1 ub-img squIcon6"></div>
+                        </div>
+                        <div class="umar-at1 t-gra7 tx-c ulev-squ">
+                            报告
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+ </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+     <script src="js/appcan.slider.js"></script>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        });
+
+   var slider = appcan.slider({
+  selector : '#slider',
+  aspectRatio:6/16,
+  hasLabel:false,
+  index:0
+});
+slider.set([{
+    img : "/css/res/zf3.jpg",
+    label:""
+}])
+slider.on("clickItem",function(index,data){
+})
+ </script>
+</html>

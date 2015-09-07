@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+ <head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <link rel="stylesheet" href="css/idangerous.swiper.css">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="first_content/css/main.css">
+  <style>
+/* Demo Styles */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.swiper-container {
+/*  width: 365px;
+  height: 480px;
+
+*/
+  width: 720px;
+  height: 1080px;
+  color: #fff;
+  text-align: center;
+}
+.swiper-slide {
+  width: 9em;
+  height: 100%;
+}
+.slide1 {
+ background-image: url('css/res/conver2.png');
+}
+.slide2 {
+  background-image: url('css/res/2.png');
+}
+.slide3 {
+  background-image: url('css/res/3.png');
+}
+.slide4 {
+  background-image: url('css/res/4.png');
+}
+.green-slide {
+  background: #49a430;
+}
+.pink-slide {
+  background: #973e76;
+}
+.swiper-slide .title {
+  font-style: italic;
+  font-size: 2em;
+  margin-top: 2em;
+  margin-bottom: 0;
+  line-height: 2em;
+}
+.pagination {
+  position: absolute;
+  z-index: 20;
+  left: 8em;
+  bottom: 1em;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background: #222;
+  margin-right: 5px;
+  opacity: 0.8;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.swiper-visible-switch {
+  background: #aaa;
+}
+.swiper-active-switch {
+  background: #fff;
+}
+  </style>
+</head>
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide  slide1">
+        <div class="title">Slide 1</div>
+      </div>
+      <div class="swiper-slide slide2">
+        <div class="title">Slide 2</div>
+      </div>
+      <div class="swiper-slide  slide3">
+        <div class="title">Slide 3</div>
+      </div>
+      <div class="swiper-slide  slide4">
+        <div class="title">Slide 4</div>
+        <div class='ub my-umar-t ub-pc'>
+        <div class="btn ub ub-ac bc-text-head ub-pc bc-btn my-umar-r uc-a"  id="btn1">
+	了解更多
+    </div>
+       <div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a"  id="btn2">
+	登录系统
+   </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="pagination"></div>
+  </div>
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script src="js/idangerous.swiper.min.js"></script>
+  <script src="js/appcan.js"></script>
+  <script src="js/appcan.control.js"></script>
+  <script>
+  var mySwiper = new Swiper('.swiper-container',{
+    pagination: '.pagination',
+    paginationClickable: true,
+    moveStartThreshold: 100
+  })
+ appcan.button("#btn1", "ani-act", function() {
+          appcan.window.open({
+              name:'explain1',
+              data:'explain1.html'
+          });  
+})
+appcan.button("#btn2", "ani-act", function() {
+      appcan.window.open({
+          name:'login',
+          data:'login.html'
+      });      
+})
+ </script>
+</body>
+</html>

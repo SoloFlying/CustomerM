@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+<title>
+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" href="css/ui-base.css">
+<link rel="stylesheet" href="css/ui-box.css">
+<link rel="stylesheet" href="css/ui-color.css">
+<link rel="stylesheet" href="catalog_content/css/main.css">
+<link rel="stylesheet" href="css/appcan.control.css">
+</head>
+<body class="um-vp c-wh2" ontouchstart>
+	<div class="ub ub-ver" id="listview">
+	    
+	</div>
+	<div class="ub-img uwh-ca1 catalog uabs-ca"></div>
+<script src="js/appcan.js"></script>
+<script src="js/appcan.control.js"></script>
+<script src="js/appcan.listview.js"></script>
+</body>
+<script>
+appcan.ready(function(){
+	appcan.initBounce();
+	//catalog();
+})
+var lv = appcan.listview({
+    selector : "#listview",
+    type : "thinLine",
+    hasIcon : false,
+    hasAngle : false,
+    hasSubTitle:false
+});
+lv.set([{
+    id:"00",
+    title : "章节列表",
+    pagename : "uibase",
+    pageurl:"UIframe/uibase.html"
+}, {
+    id:"01",
+    title : "章节列表",
+    pagename : "uibox",
+    pageurl:"UIframe/uibox.html"
+}, {
+    id:"02",
+    title : "章节列表",
+    pagename : "uibox",
+    pageurl:"UIframe/uibox.html"
+}, {
+    id:"03",
+    title : "章节列表",
+    pagename : "uibox",
+    pageurl:"UIframe/uibox.html"
+}, {
+    id:"04",
+    title : "章节列表",
+    pagename : "uibox",
+    pageurl:"UIframe/uibox.html"
+}, {
+    id:"05",
+    title : "章节列表",
+    pagename : "uibox",
+    pageurl:"UIframe/uibox.html"
+}, {
+    id:"06",
+    title : "章节列表",
+    pagename : "uibox",
+    pageurl:"UIframe/uibox.html"
+}]);
+lv.on('click', function(ele, context, obj, subobj) {
+     appcan.openWinWithUrl('book','book.html');
+})
+
+// function catalog(){
+	// var arrBook = [{
+		// "id":"00",
+		// "num":"1",
+		// "chapter":"章节列表"
+	// }, {
+		// "id":"01",
+		// "num":"2",
+		// "chapter":"章节列表"
+	// },{
+		// "id":"02",
+		// "num":"3",
+		// "chapter":"章节列表"
+	// },{
+		// "id":"03",
+		// "num":"4",
+		// "chapter":"章节列表"
+	// },{
+		// "id":"04",
+		// "num":"5",
+		// "chapter":"章节列表"
+	// },{
+		// "id":"05",
+		// "num":"6",
+		// "chapter":"章节列表"
+	// },{
+		// "id":"06",
+		// "num":"7",
+		// "chapter":"章节列表"
+	// },{
+		// "id":"07",
+		// "num":"8",
+		// "chapter":"章节列表"
+	// }];
+	// var tmpl = 	'<%for(var i=0,len=arrBook.length;i<len;i++){%><div name="click"  onmousedown="appcan.touch(\'\')" ontouchstart="appcan.touch(\'\')" onclick="sel(${arrBook[i].id})" class="t-bla ulev-1 tx-l ub-f1 uinn-ca1 ubb b-gra-ae">${arrBook[i].num}.${arrBook[i].chapter}</div><%}%>';
+	// appcan.tmpl('#catalog',tmpl, {'arrBook':arrBook});
+// }
+
+// function sel(num){
+	// var click = document.getElementsByName('click');
+	// for(var i in click){
+		// click[i].className = 't-bla ulev-1 tx-l ub-f1 uinn-ca1 ubb b-gra-ae';
+	// }
+	// click[num].className = 'c-gra-ae t-wh ulev-1 tx-l ub-f1 uinn-ca1 ubb b-gra-ae';
+	// appcan.openWinWithUrl('book','book.html');
+// }
+</script>
+</html>

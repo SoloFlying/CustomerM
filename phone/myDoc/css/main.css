@@ -1,0 +1,40 @@
+.t-btn-w1{
+	background-image:url(myImg/t-btn-w1.png);
+}
+/*header--2*/
+.uh-app4{
+	height:2.75em;
+}
+.ubb2{
+	border-bottom:0.0625em solid #cccccc;
+}
+.t-blu2{
+	color:#0670b7;
+}
+.uabs-r-icon1
+{
+	position:absolute;
+	left:50%;
+	bottom:-0.0625em;
+	margin-left:-0.34em;
+}
+.uwh-icon3{
+	width:0.6875em;
+	height:0.40625em;
+}
+.t-icon2{
+	background-image:url('myImg/t-act-icon2.png');
+}
+input[type="radio"] + div>div.t-cur{
+	display:none;
+}
+input[type="radio"]:checked + div>div.t-cur{
+	display:block;
+	background-image:url('myImg/t-act-icon2.png');
+}
+input[type="radio"] + div>div.t-tit{
+	color:#a1a1a1;
+}
+input[type="radio"]:checked + div>div.t-tit{
+	color:#218dd5;
+}

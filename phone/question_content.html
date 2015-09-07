@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="question_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+       <div class='ub my-umar-b my-umar-t ub-pc'>
+           <div class="btn ub ub-ac bc-text-head ub-pc bc-btn"  id="btn">
+	新建
+</div>
+<div class="btn ub ub-ac bc-text-head ub-pc bc-btn my-umar-l"  id="btn">
+   编辑
+</div>
+<div class="btn ub ub-ac bc-text-head ub-pc bc-btn my-umar-l"  id="btn">
+    撤销
+</div>
+       </div>
+        <div class="ub ub-ver" id="listview">
+
+        </div>
+    </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    <script src="js/appcan.listview.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+        });
+       
+        var lv = appcan.listview({
+            selector : "#listview",
+            type : "thinLineTmp",
+            hasIcon : false,
+            hasAngle : false,
+            hasSubTitle : false
+        });
+        lv.set([{
+            title : "问题：×××××××××××××××"
+        }, {
+            title : "问题：×××××××××××××××"
+        }, {
+            title : "问题：×××××××××××××××"
+        }, {
+            title : "问题：×××××××××××××××"
+        }, {
+            title : "问题：×××××××××××××××"
+        }, {
+            title : "问题：×××××××××××××××"
+        }]);
+        lv.on('click', function(ele, context, obj, subobj) {
+            //appcan.window.open(context.pagename,context.pageurl,10);
+        })
+   appcan.button(".btn", "ani-act", function() {
+            
+})
+ </script>
+</html>

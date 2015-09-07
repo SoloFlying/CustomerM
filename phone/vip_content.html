@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="vip_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="c-gra1 uinn-a1 ub">
+            <div class="ub-f1 ub ub-ver ub-ac ub-pc">
+                <div class="uwh-set3 pos_re">
+                    <div class="uwh-set3 uc-a-set3 ub-img setImg1"></div>
+                    <div class="uwh-set5 c-gra1 ub-a-set4 set-pos ub-ac ub-pc ub">
+                        <div class="uwh-set4 icon-set3 ub-img"></div>
+                    </div>
+                </div>
+                <div class="umar-at1">
+                    
+                </div>
+                <div class="t-gra-set3 ulev-4 umar-t">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="ub ub-ver ub-f1">
+              <div id="listview"  class="ubt bc-border sc-bg">
+          </div>
+          
+
+        </div>
+        <div class='ub ub-ac ub-pc umar-t umar-b'>
+             <div class="my-btn ub ub-ac bc-text-head ub-pc bc-btn" style='width: 4em;' id="btn">
+    退出登录
+</div>
+        </div>
+    </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    <script src="js/appcan.listview.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        })
+       
+
+   var lv = appcan.listview({
+    selector : "#listview",
+    type : "thinLine",
+    hasAngle : false,
+});
+lv.set([{
+    title : "账号：××××",
+    id:""
+}, {
+    title : "昵称：××××",
+    id:""
+}, {
+    title : "邮件： richard@firetiger.com",
+    id:""
+}, {
+    title : "联系电话：",
+    id:""
+}, {
+    title : "个人主页",
+    id:""
+}, {
+    title : "积分：VIP",
+    id:""
+}])
+lv.on("click",function(ele,obj,curEle){
+})
+appcan.button(".btn", "ani-act", function() {
+            
+})
+ </script>
+</html>
